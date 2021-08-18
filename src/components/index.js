@@ -1,5 +1,9 @@
-import NavBar from "./NavBar";
+import Navbar from './Navbar';
+import ProductList from './ProductList';
+import Product from './Product';
 
-export default {
-    NavBar
-}
+export {
+    Navbar,
+    ProductList,
+    Product
+};
