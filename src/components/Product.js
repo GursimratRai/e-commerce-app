@@ -8,7 +8,7 @@ const Product = (props) => {
   const { product } = props;
   return (
     <div>
-      <Card hoverable style={{ width: '70vw',marginTop: 10 }}  actions={[
+      <Card hoverable style={{ width: '80vw',marginTop: 10 }}  actions={[
             <i className="fas fa-pencil-alt"></i>,
             <i className="fas fa-trash"></i>,
             <Button type='primary'>Add To Cart</Button>,        
