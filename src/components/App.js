@@ -29,8 +29,8 @@ const App = (props) => {
           <Navbar changeMenu={changeMenu} />
         </Header>
         
-        <Content className="site-layout" style={{ padding: "0 50px", height:'100%', marginTop: 64 }} >
-          <div className="site-layout-background" style={{ padding: 24, minHeight: 380 ,height:'100%'}} >
+        <Content className="site-layout" style={{ padding: "0 50px", height:'100%', minHeight:'100vh', marginTop: 64 }} >
+          <div className="site-layout-background" style={{padding: 24, minHeight: 380 ,height:'100%'}} >
             {menu === 1 && <ProductList products = {list} />}
             {menu === 2 && <AddProduct />}
             {menu === 3 && <ProductList products = {cart} />}
