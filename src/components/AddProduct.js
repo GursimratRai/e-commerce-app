@@ -1,20 +1,31 @@
-import React from "react";
+import React , {useState} from "react";
+import {connect} from 'react-redux';
+//antd components
 import { Form, Input, Button, Row, Col, InputNumber, Rate } from "antd";
+//actions
+import { addNewProduct } from "../actions/products";
 
+//Component contains form for adding the new product in the list
 const AddProduct = (props) => {
-  const onFinish = (values) => {};
-  const onFinishFailed = (error) => {};
 
+  const [loading,setLoading] = useState(false);
+
+  //function for handling submission of the form
+  const onFinish = async(values) => {
+    setLoading(true);
+    await props.dispatch(addNewProduct(values));
+    setLoading(false);
+  };
+
+  //FORM
   return (
     <div style={{ backgroundColor: "white", padding: 20 }}>
       <Form
         name="basic"
-        // labelCol={{ span: 8 }}
-        // wrapperCol={{ span: 16 }}
-        initialValues={{ remember: true }}
+        initialValues={{}}
         onFinish={onFinish}
-        onFinishFailed={onFinishFailed}
       >
+                                                                                     {/* Title Of the Product */}
         <Row>
           <Col span={24}>
             <Form.Item
@@ -26,6 +37,7 @@ const AddProduct = (props) => {
             </Form.Item>
           </Col>
         </Row>
+                                                                                   {/* Brand name of the Product */}
         <Row gutter={48}>
           <Col span={12}>
             <Form.Item
@@ -36,6 +48,7 @@ const AddProduct = (props) => {
               <Input placeholder={"Enter Brand Name"} />
             </Form.Item>
           </Col>
+                                                                                            {/* Generation */}
           <Col span={12}>
             <Form.Item
               label="Generation"
@@ -48,6 +61,7 @@ const AddProduct = (props) => {
         </Row>
 
         <Row gutter={48}>
+                                                                                          {/* Display Size */}
           <Col span={12}>
             <Form.Item
               label="Display Size"
@@ -59,6 +73,7 @@ const AddProduct = (props) => {
               <Input placeholder={"Enter Display Dimensions"} />
             </Form.Item>
           </Col>
+                                                                                       {/* Operating System */}
           <Col span={12}>
             <Form.Item
               label="Operating System"
@@ -76,6 +91,7 @@ const AddProduct = (props) => {
         </Row>
 
         <Row gutter={48}>
+                                                                                      {/* Price of the product */}
           <Col span={8}>
             <Form.Item label="Price">
               <Form.Item
@@ -91,6 +107,7 @@ const AddProduct = (props) => {
               </Form.Item>
             </Form.Item>
           </Col>
+                                                                                               {/* category */}
           <Col span={8}>
             <Form.Item
               label="Category"
@@ -105,14 +122,16 @@ const AddProduct = (props) => {
               <Input placeholder={"Enter Category"} />
             </Form.Item>
           </Col>
+                                                                                               {/* Rating  */}
           <Col span={8}>
             <Form.Item name="rating" label="Rate">
-              <Rate defaultValue={0} style={{ backgroundColor: "white" }} />
+              <Rate style={{ backgroundColor: "white" }} />
             </Form.Item>
           </Col>
         </Row>
 
         <Row>
+                                                                                    {/* Image Url of the Product */}
           <Col span={24}>
             <Form.Item
               label="Image"
@@ -125,6 +144,7 @@ const AddProduct = (props) => {
         </Row>
 
         <Row>
+                                                                                 {/* Description of the Product */}
           <Col span={24}>
             <Form.Item
               label="Description"
@@ -136,8 +156,9 @@ const AddProduct = (props) => {
           </Col>
         </Row>
 
+                                                                                        {/* Submit Button */}
         <Form.Item wrapperCol={{ offset: 22, span: 16 }}>
-          <Button type="primary" htmlType="submit">
+          <Button type="primary" htmlType="submit" loading={loading}>
             Add
           </Button>
         </Form.Item>
@@ -146,4 +167,4 @@ const AddProduct = (props) => {
   );
 };
 
-export default AddProduct;
+export default connect()(AddProduct);
