@@ -115,7 +115,7 @@ const Product = (props) => {
                   <Input placeholder={"Enter Product Name"} />
                 </Form.Item>
               ) : (
-                <Link to={`e-commerce-app/product/${product.id}`}>{product.title}</Link>
+                <Link to={`/e-commerce-app/product/${product.id}`}>{product.title}</Link>
               )
             }
             description={
