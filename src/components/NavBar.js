@@ -14,13 +14,13 @@ const Navbar = (props) => {
       <div>
         <Menu theme="light" mode="horizontal" defaultSelectedKeys={["1"]}>
           {/* link for home / all products */}
-          <Menu.Item key="1"><Link to="/" >Products</Link></Menu.Item>
+          <Menu.Item key="1"><Link to="/e-commerce-app" >Products</Link></Menu.Item>
           {/* link for adding new product  */}
-          <Menu.Item key="2"><Link to="/add-product" >Add A Product</Link> </Menu.Item>
+          <Menu.Item key="2"><Link to="/e-commerce-app/add-product" >Add A Product</Link> </Menu.Item>
           {/* link for Cart and Icon with count  */}
           <Menu.Item key="3">  
             <Badge  size="small"  count={count}>
-              <Link to ="/cart" >
+              <Link to ="/e-commerce-app/cart" >
                    <Avatar style={{color:'blue'}} size="large"><i className="fas fa-shopping-cart"></i></Avatar>
               </Link>
             </Badge>

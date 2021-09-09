@@ -1,4 +1,4 @@
-import React, {useEffect } from "react";
+import React,{useEffect} from "react";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -14,7 +14,8 @@ const { Header, Content } = Layout;
 
 const App = (props) => {
 
-  const {dispatch}=props;
+  const {dispatch} = props;
+
   //function for loading / pre-fetch all the products
   useEffect(() => {
     dispatch(fetchProducts());
@@ -38,13 +39,13 @@ const App = (props) => {
           <div className="site-layout-background" style={{padding: 24, minHeight: 380 ,height:'100%'}} >
               <Switch>
                 {/* Home */}
-                <Route exact path="/" component={() => <ProductList products={list} />} />
+                <Route exact path="/e-commerce-app" component={() => <ProductList products={list} />} />
                 {/* Add New Product */}
-                <Route exact path="/add-product" component={() => <AddProduct />} />
+                <Route  path="/e-commerce-app/add-product" component={() => <AddProduct />} />
                 {/* Cart */}
-                <Route exact path="/cart" component={() => <ProductList products={cart} />} />
+                <Route path="/e-commerce-app/cart" component={() => <ProductList products={cart} />} />
                 {/* Product Detail Page */}
-                <Route path="/product/:id" component={() => <ProductDetail products={list} cart={cart} />} />
+                <Route path="/e-commerce-app/product/:id" component={() => <ProductDetail products={list} cart={cart} />} />
             </Switch>
           </div>
         </Content>
