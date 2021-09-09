@@ -1,6 +1,41 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# E-Commerce App
+
+## 🔗 Live Link
+This application is live and available online [here](https://gursimratrai.github.io/e-commerce-app/)
+
+
+## API Reference
+
+#### Base URL
+
+```http
+  https://my-json-server.typicode.com
+```
+
+#### Get item
+
+```http
+   GET /GursimratRai/json-server
+```
+
+| Reference | Method     | Purpose                       |
+| :-------- | :------- | :-------------------------------- |
+| `/products`      | `GET` | 	Return JSON contains list of products |
+| `/products`      | `POST` | 	Return JSON contains Information about the new product |
+| `/products/id`      | `PATCH` | 	Return JSON contains Updated Information of the product |
+| `/products/id`      | `DELETE` | 	Return JSON contains status of the request  |
+
+
+## Features
+
+- Add new product
+- Delete a product
+- Each product is editable / Update inline
+- Add a product to the cart
+- Remove a product from the cart
+- Real-time Count of products in Cart
+- Sorted Preview of the products by price
 
 ## Available Scripts
 
